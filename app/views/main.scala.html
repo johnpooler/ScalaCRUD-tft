@@ -1,0 +1,15 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/tft-logo.png")">
+        <script src="@routes.Assets.at("javascripts/hello.js")" type="text/javascript"></script>
+    </head>
+    <body>
+        @content
+    <img src="https://media.giphy.com/media/kbRDtgjMjcTyfNGNLG/giphy.gif" alt="pingu gif" height="100" width="200">
+    </body>
+</html>
