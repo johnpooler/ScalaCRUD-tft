@@ -18,7 +18,7 @@ class LoginController @Inject()(cc: ControllerComponents) extends AbstractContro
       if (LoginDetails.checkIfUserIsValid(loginDetails))
         Redirect(routes.HomeController.index()).withSession(request.session + ("username" -> loginDetails.username))
       else
-        BadRequest("Incorrect username or password")
+        BadRequest("Incorrecto username or password")
     })
   }
 
