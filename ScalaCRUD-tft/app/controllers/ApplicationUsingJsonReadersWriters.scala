@@ -35,17 +35,19 @@ class ApplicationUsingJsonReadersWriters @Inject()(
     request.body.validate[User].map { user =>
       collection.flatMap(_.insert.one(user)).map { _ => Ok("User inserted")
       }
-    }.getOrElse(Future.successful(BadRequest("invalid json")))
+    }.getOrElse(Future.successful(BadRequest("invalid json ")))
   }
 
 //  def update: Action[AnyContent]= Action.async {
 //
 //  }
 
-
-//  def delete:Action[AnyContent]= Action.async {
-//
-//  }
+  def removeNoteFromJson: Action[JsValue] = Action.async(parse.json){ request =>
+    request.body.validate[User].map { user =>
+      collection.flatMap(c => c.remove(user) ).map { _ => Ok("removed")
+      }
+    }.getOrElse(Future.successful(BadRequest("invalid Json dude")))
+  }
 
 
   def findByName(lastName: String): Action[AnyContent] = Action.async {

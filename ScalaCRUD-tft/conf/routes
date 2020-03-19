@@ -8,6 +8,8 @@ GET         /createperson                controllers.ApplicationUsingJsonReaders
 POST        /createFromJson              controllers.ApplicationUsingJsonReadersWriters.createFromJson
 
 GET         /findByName/:lastName        controllers.ApplicationUsingJsonReadersWriters.findByName(lastName: String)
-GET         /findByAge/:age       controllers.ApplicationUsingJsonReadersWriters.findByAge(age: Int)
+GET         /findByAge/:age              controllers.ApplicationUsingJsonReadersWriters.findByAge(age: Int)
 
 GET         /assets/*file                controllers.Assets.at(path="/public", file)
+
+DELETE   /removecollection             controllers.ApplicationUsingJsonReadersWriters.removeNoteFromJson
