@@ -26,7 +26,7 @@ class ApplicationUsingJsonReadersWriters @Inject()(
   def collection: Future[JSONCollection] = database.map(_.collection[JSONCollection]("persons"))
 
   def create: Action[AnyContent] = Action.async {
-    val user = User(15, "Thomas", "Pooler", List(Feed("COVID19 news", "https://www.worldometers.info/coronavirus/")))
+    val user = User(31, "Manolillo", "Marchena", List(Feed("instalink", "https://www.worldometers.info/coronavirus/")))
     val futureResult = collection.flatMap(_.insert.one(user))
     futureResult.map(_ => Ok("User has been inserted"))
   }
