@@ -9,7 +9,8 @@ import scala.concurrent.ExecutionContext.Implicits.global
 class HomeController @Inject()(cc: ControllerComponents, authAction: AuthenticationAction, val mongoService: MongoService) extends AbstractController(cc) {
 
   def index: Action[AnyContent] = authAction {
-    Ok(views.html.index("Madame, your new application is ready."))
+    Ok(views.html.index(
+      """ Madame, your new application is ready."""))
   }
 
   def showRecords(): Action[AnyContent] = Action.async {
